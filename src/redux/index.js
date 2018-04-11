@@ -16,7 +16,7 @@ const reducers = combineReducers({
     // ui: uiReducer,
     // data: dataReducer,
 });
-
+console.log(composeEnhancers)
 const enhancer = composeEnhancers(
     applyMiddleware(
         routerMiddleware(history),

@@ -17,7 +17,7 @@ const TableComponent = () => {
             defaultPageSize={50}
             data={makeData(1000)}
             style={{
-                height: "99.5vh"
+                height: "calc(100vh - 70px)"
             }}
             className="-striped -highlight"
             columns={[

@@ -3,13 +3,14 @@ import { connect } from "react-redux"
 import Loading from './loading'
 import Header from './header'
 import SwitchViews from './switchviews'
+import { withRouter } from 'react-router'
 
 const Skeleton = ({ dataLoaded }) => {
 
     if(!dataLoaded) {
         return (
             <div>
-                {/* <Header /> */}
+                <Header />
                 <SwitchViews />
             </div>
         )
@@ -23,9 +24,4 @@ const mapStateToProps = state => ({
     dataLoaded: state.views.dataLoaded,
 });
 
-
-export default connect(
-    mapStateToProps,
-)(
-    Skeleton
-);
+export default withRouter(connect(mapStateToProps)(Skeleton))
