@@ -1,17 +1,17 @@
 import {
-    DATA_LOADED,
+    TOGGLE_SLIDER,
 } from "../actions/views";
 
 const initialUiState = {
-    dataLoaded: false,
+    slider: false,
 };
 
 const uiReducer = (state = initialUiState, { type, payload }) => {
     switch (type) {
-        case DATA_LOADED:
+        case TOGGLE_SLIDER:
             return {
                 ...state,
-                dataLoaded: true
+                slider: !state.slider
             };
 
         default:

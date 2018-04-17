@@ -5,6 +5,11 @@ import Graphs from './../graphs'
 import Maps from './../maps'
 
 const SwitchViews = () => (
+    <div
+        style={{
+            height: "calc(100vh - 74px)"
+        }}
+    >
     <Switch>
         <Route
             exact
@@ -25,6 +30,7 @@ const SwitchViews = () => (
             component={Maps}
         />
     </Switch>
+    </div>
 )
 
 export default SwitchViews

@@ -1,4 +1,4 @@
-export const DATA_LOADED = "DATA_LOADED";
-export const dataLoaded = () => ({
-    type: DATA_LOADED
+export const TOGGLE_SLIDER = "TOGGLE_SLIDER";
+export const toggleSlider = () => ({
+    type: TOGGLE_SLIDER
 });
