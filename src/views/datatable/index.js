@@ -28,9 +28,10 @@ const TableComponent = ({
     updateFiltered,
     updateSortedData,
     pivot,
-    renderedColumns
+    renderedColumns,
+    ...other
 }) => {
-
+    console.log(other)
     const cols = renderedColumns.map(column => ({
         Header: column,
         accessor: column,

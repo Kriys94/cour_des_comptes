@@ -16,7 +16,6 @@ const PivotComponent = (columns, pivot, addPivot, removePivot) => {
     <div style={{display: 'flex', flexDirection: 'column', flex: 1}}>
         {
             columns.map((col, index) => {
-                console.log(pivot.indexOf(col))
                 return pivot.indexOf(col) === -1 ? 
                 (
                     <Checkbox
@@ -102,26 +101,26 @@ class AccordionExampleMenu extends Component {
         <Accordion as={Menu} vertical style={{borderRadius: 0, width: '100%'}}>
             <Menu.Item>
                 <Accordion.Title
-                    active={activeIndex === 0}
+                    active
                     content='Agréger par'
                     index={0}
                     onClick={this.handleClick}
                 />
                 <Accordion.Content
-                    active={activeIndex === 0}
+                    active
                     content={PivotComponent(columns, pivot, addPivot, removePivot)}
                 />
             </Menu.Item>
 
             <Menu.Item>
             <Accordion.Title
-                active={activeIndex === 1}
+                active
                 content='Variables visibles'
                 index={1}
                 onClick={this.handleClick}
             />
             <Accordion.Content
-                active={activeIndex === 1}
+                active
                 content={ColumnViewComponent(columns, renderedColumns, addRenderColumns, removeRenderColumns)}
             />
             </Menu.Item>

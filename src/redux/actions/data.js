@@ -1,33 +1,28 @@
 export const UPDATE_DATA = "UPDATE_DATA";
 
-// const fetchData = async (url) => {
-//     const response = await fetch(url);
-//     const json = await response.json();
-//     return json.data
-// };
+const formatItem = (col, obs) => {
+    let obj = {};
+    obs.forEach((item, index) => {
+        obj[col[index]] = item;
+    })
+    return obj;
+}
 
 export const updateData = (url) => ({
     type: UPDATE_DATA,
     payload: (async () => {
         const response = await fetch(url);
         const json = await response.json();
-        return json
+        const FormatedData = json.rows.map(item => formatItem(json.columns, item) )
+        return {data: FormatedData, columns: json.columns}
     })
 });
 
-// export const UPDATE_COLUMNS = "UPDATE_COLUMNS";
-// export const updateColumns = (columns) => ({
-//     type: UPDATE_COLUMNS,
-//     payload: columns
-// });
 export const RESET_RENDER_COLUMNS = "RESET_RENDER_COLUMNS";
 export const resetRenderColumns = () => ({
     type: RESET_RENDER_COLUMNS
 });
-// export const RESET_SORTEDDATA = "RESET_SORTEDDATA";
-// export const resetSortedData = () => ({
-//     type: RESET_SORTEDDATA
-// });
+
 export const RESET_PIVOT = "RESET_PIVOT";
 export const resetPivot = () => ({
     type: RESET_PIVOT

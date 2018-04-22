@@ -14,19 +14,19 @@ const SwitchViews = () => (
         <Route
             exact
             strict
-            path={'/'}
+            path={'/data/:id'}
             component={DataTable}
         />
         <Route
             exact
             strict
-            path={'/graphs'}
+            path={'/graphs/:id'}
             component={Graphs}
         />
         <Route
             exact
             strict
-            path={'/map'}
+            path={'/map/:id'}
             component={Maps}
         />
     </Switch>

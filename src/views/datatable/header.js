@@ -14,6 +14,9 @@ import {
     resetResized,
     resetFiltered
 } from "./../../redux/actions/reactTable";
+import { 
+    toggleSlider,
+} from "./../../redux/actions/views";
 import { CSVLink } from 'react-csv';
 
 const Header = ({
@@ -26,14 +29,12 @@ const Header = ({
     resetResized,
     resetFiltered,
     sortedData,
-    columns
+    columns,
+    toggleSlider,
+    slider
 }) => {
     return (
         <Menu.Menu position='right'>
-            <Menu.Item name='help'>
-                <Icon name='add' />
-                Aggréger
-            </Menu.Item>
             <Menu.Item
                 name='save'
             >
@@ -81,6 +82,12 @@ const Header = ({
                     </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
+            <Menu.Item
+                onClick={() => toggleSlider()}
+            >
+                { slider ? <Icon name='close' /> : <Icon name='options' /> }
+                Outils
+            </Menu.Item>
         </Menu.Menu>
     )
 }
@@ -88,7 +95,8 @@ const Header = ({
 export const mapStateToProps = state => ({
     reactTable: state.reactTable,
     sortedData: state.data.sortedData,
-    columns: state.data.columns
+    columns: state.data.columns,
+    slider: state.views.slider
 });
 
 const mapDispatchToProps = {
@@ -99,6 +107,7 @@ const mapDispatchToProps = {
     resetExpanded: resetExpanded,
     resetResized: resetResized,
     resetFiltered: resetFiltered,
+    toggleSlider: toggleSlider,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

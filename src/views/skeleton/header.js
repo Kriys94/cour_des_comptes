@@ -7,42 +7,34 @@ import {
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import DataHeader from './../datatable/header'
-import { 
-    toggleSlider,
-} from "./../../redux/actions/views";
 
 const Header = ({ path, history, toggleSlider }) => {
+
+    const id = path.split('/')[2];
 
     return (
         <Segment inverted style={{borderRadius: 0, margin: 0}}>
             <Menu inverted pointing secondary>
                 <Menu.Item
-                    active={path === '/'}
-                    onClick={() => history.push('/')}
+                    active={path === '/data/' + id}
+                    onClick={() => history.push('/data/' + id)}
                 >
                     <Icon name='database' />
                     Données
                 </Menu.Item>
                 <Menu.Item
-                    active={path === '/graphs'}
-                    onClick={() => history.push('/graphs')}
+                    active={path === '/graphs/' + id}
+                    onClick={() => history.push('/graphs/' + id)}
                 >
                     <Icon name='pie chart' />
                     Graphiques
                 </Menu.Item>
                 <Menu.Item
-                    active={path === '/map'}
-                    onClick={() => history.push('/map')}
+                    active={path === '/map/' +  id}
+                    onClick={() => history.push('/map/' + id)}
                 >
                     <Icon name='map' />
                     Cartographie
-                </Menu.Item>
-                <Menu.Item
-                    active={path === '/map'}
-                    onClick={() => toggleSlider()}
-                >
-                    <Icon name='options' />
-                    Outils
                 </Menu.Item>
                 <DataHeader />
             </Menu>
@@ -54,10 +46,6 @@ export const mapStateToProps = state => ({
     path: state.router.location.pathname,
 });
 
-const mapDispatchToProps = {
-    toggleSlider: toggleSlider,
-};
-
 const RoutedHeader = withRouter(Header);
 
-export default connect(mapStateToProps, mapDispatchToProps)(RoutedHeader);
+export default connect(mapStateToProps)(RoutedHeader);
