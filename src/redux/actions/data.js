@@ -8,13 +8,24 @@ const formatItem = (col, obs) => {
     return obj;
 }
 
+// export const updateData = (url) => ({
+//     type: UPDATE_DATA,
+//     payload: (async () => {
+//         const response = await fetch(url);
+//         const json = await response.json();
+//         const FormatedData = json.rows.map(item => formatItem(json.columns, item) )
+//         return {data: FormatedData, columns: json.columns}
+//     })
+// });
+
+
 export const updateData = (url) => ({
     type: UPDATE_DATA,
     payload: (async () => {
         const response = await fetch(url);
         const json = await response.json();
-        const FormatedData = json.rows.map(item => formatItem(json.columns, item) )
-        return {data: FormatedData, columns: json.columns}
+        // const FormatedData = json.rows.map(item => formatItem(json.columns, item) )
+        return {data: json.rows, columns: json.columns}
     })
 });
 
