@@ -19,37 +19,29 @@ const Graph = ({
     switch (graph.plotType) {
       case 'scatter':
         return (
-          <VictoryScatter
-            data={data}
-            x={graph.xAxis}
-            y={graph.yAxis}
-          />
+          <VictoryChart>
+            <VictoryScatter
+              data={data}
+              x={graph.xAxis}
+              y={graph.yAxis}
+            />
+          </VictoryChart>
         )
       case 'bar':
         return (
-          <VictoryBar
-            data={data}
-            x={graph.xAxis}
-            y={graph.yAxis}
-          />
+          <VictoryChart>
+            <VictoryBar
+              data={data}
+              x={graph.xAxis}
+              y={graph.yAxis}
+            />
+          </VictoryChart>
         )
       default:
         return (
           'Choisir un type de graphique'
         )
     }
-
-    return (
-
-        <VictoryChart>
-          <VictoryBar
-            data={data}
-            x={graph.xAxis}
-            y={graph.yAxis}
-          />
-        </VictoryChart>
-
-    )
 
 }
 
