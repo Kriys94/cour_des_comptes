@@ -1,13 +1,15 @@
 import React from 'react'
+import Graph from './graph'
+import SelectAxes from './selectAxes'
+import SelectPlotType from './selectPlotType'
 
-const Graphs = () => {
+const Graphs = () => (
+  <React.Fragment>
+    <SelectAxes />
+    <SelectPlotType />
+    <Graph />
+  </React.Fragment>
+)
 
-    return (
-        <div>
-            Graphs
-        </div>
-    )
-
-}
 
 export default Graphs

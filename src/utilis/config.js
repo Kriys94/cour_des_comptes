@@ -1,1 +1,1 @@
-export const serverApi = 'http://csvapi.maboiteprivee.fr:8080/api'
+export const serverApi = 'http://localhost:8080/api'

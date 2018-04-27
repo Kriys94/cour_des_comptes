@@ -7,12 +7,14 @@ import { serverApi } from './../../utilis/config'
 
 const Loading = ({
     path,
+    search,
     updateData,
 }) => {
 
     const id = path.split('/')[2];
     // cde857960e8dc24c9cbcced673b496bb
-    updateData(serverApi + '/' + id)
+    console.log(id)
+    updateData(serverApi + '/' + id + search)
 
     return (
         <div style={{ display: 'flex', flex: 1, alignItems: 'center', height: '100vh', width: '100vw'}}>
@@ -34,6 +36,7 @@ const Loading = ({
 
 export const mapStateToProps = state => ({
     path: state.router.location.pathname,
+    search: state.router.location.search,
 });
 
 const mapDispatchToProps = {

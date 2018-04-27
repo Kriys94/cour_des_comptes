@@ -34,7 +34,7 @@ const Reducer = (state = initialState, { type, payload }) => {
                 ...state,
                 view: 'error'
             };
-        
+
         case `${UPDATE_DATA}_FULFILLED`:
             return {
                 ...state,
@@ -44,7 +44,7 @@ const Reducer = (state = initialState, { type, payload }) => {
                 renderedColumns: payload.columns,
                 view: 'success'
             };
-       
+
         // case UPDATE_COLUMNS:
         //     return {
         //         ...state,
@@ -68,13 +68,13 @@ const Reducer = (state = initialState, { type, payload }) => {
                 ...state,
                 renderedColumns: state.renderedColumns.concat([payload])
             };
-        
+
         case REMOVE_RENDER_COLUMNS:
             return {
                 ...state,
                 renderedColumns: state.renderedColumns.filter(item => item !== payload)
             };
-        
+
         case UPDATE_SORTEDDATA:
             return {
                 ...state,
@@ -86,7 +86,7 @@ const Reducer = (state = initialState, { type, payload }) => {
                 ...state,
                 pivot: state.pivot.concat([payload])
             };
-        
+
         case REMOVE_PIVOT:
             return {
                 ...state,

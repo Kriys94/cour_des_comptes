@@ -14,7 +14,7 @@ import {
     resetResized,
     resetFiltered
 } from "./../../redux/actions/reactTable";
-import { 
+import {
     toggleSlider,
 } from "./../../redux/actions/views";
 import { CSVLink } from 'react-csv';

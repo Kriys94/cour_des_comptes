@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactTable from 'react-table'
 import { connect } from "react-redux";
-import { 
+import {
     updateSorted,
     updatePage,
     updatePageSize,
@@ -9,14 +9,14 @@ import {
     updateResized,
     updateFiltered,
 } from "./../../redux/actions/reactTable";
-import { 
+import {
     updateSortedData,
 } from "./../../redux/actions/data";
 import 'react-table/react-table.css'
 // import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 
 
-const TableComponent = ({ 
+const TableComponent = ({
     data,
     columns,
     reactTable,
@@ -31,7 +31,7 @@ const TableComponent = ({
     renderedColumns,
     ...other
 }) => {
-    console.log(other)
+
     const cols = renderedColumns.map(column => ({
         Header: column,
         accessor: column,
