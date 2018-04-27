@@ -1,8 +1,11 @@
 import React from 'react'
 import { connect } from "react-redux";
 
-import { VictoryScatter } from 'victory';
-import { VictoryBar, VictoryChart } from 'victory';
+import {
+  VictoryScatter,
+  VictoryBar,
+  VictoryChart,
+  VictoryZoomContainer } from 'victory';
 
 const Graph = ({
   data,
@@ -19,7 +22,9 @@ const Graph = ({
     switch (graph.plotType) {
       case 'scatter':
         return (
-          <VictoryChart>
+          <VictoryChart
+            containerComponent={<VictoryZoomContainer />}
+          >
             <VictoryScatter
               data={data}
               x={graph.xAxis}
@@ -29,7 +34,9 @@ const Graph = ({
         )
       case 'bar':
         return (
-          <VictoryChart>
+          <VictoryChart
+            containerComponent={<VictoryZoomContainer />}
+          >
             <VictoryBar
               data={data}
               x={graph.xAxis}
