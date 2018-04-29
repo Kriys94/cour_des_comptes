@@ -14,7 +14,7 @@ const Skeleton = ({ view, slider }) => {
         return (
             <div>
                 <Header />
-                <Sidebar.Pushable 
+                <Sidebar.Pushable
                     as={Segment}
                     style={{
                         margin:0,

@@ -25,7 +25,6 @@ const Loading = ({
     })
     .catch(error => console.error(error))
     // const id = location.pathname.split('/')[2];
-    
 
     return (
         <div style={{ display: 'flex', flex: 1, alignItems: 'center', height: '100vh', width: '100vw'}}>

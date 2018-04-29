@@ -7,7 +7,6 @@ const classes = {
     checkbox: {
         paddingTop: 5
     }
-    
 }
 
 const PivotComponent = (columns, pivot, addPivot, removePivot) => {
@@ -16,7 +15,7 @@ const PivotComponent = (columns, pivot, addPivot, removePivot) => {
     <div style={{display: 'flex', flexDirection: 'column', flex: 1}}>
         {
             columns.map((col, index) => {
-                return pivot.indexOf(col) === -1 ? 
+                return pivot.indexOf(col) === -1 ?
                 (
                     <Checkbox
                         key={index}
@@ -31,7 +30,7 @@ const PivotComponent = (columns, pivot, addPivot, removePivot) => {
                         label={col}
                         style={classes.checkbox}
                         onClick={() => removePivot(col)}
-                    />                
+                    />
                 )
             })
         }
@@ -44,7 +43,7 @@ const ColumnViewComponent = (columns, renderedColumns, addRenderColumns, removeR
     <div style={{display: 'flex', flexDirection: 'column', flex: 1}}>
         {
             columns.map((col, index) => {
-                return renderedColumns.indexOf(col) === -1 ? 
+                return renderedColumns.indexOf(col) === -1 ?
                 (
                     <Checkbox
                         key={index}
@@ -59,7 +58,7 @@ const ColumnViewComponent = (columns, renderedColumns, addRenderColumns, removeR
                         label={col}
                         style={classes.checkbox}
                         onClick={() => removeRenderColumns(col)}
-                    />                
+                    />
                 )
             })
         }
@@ -79,7 +78,7 @@ class AccordionExampleMenu extends Component {
 
   render() {
     const { activeIndex } = this.state
-    const { 
+    const {
         slider,
         columns,
         renderedColumns,
