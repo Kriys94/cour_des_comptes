@@ -19,12 +19,11 @@ const formatItem = (col, obs) => {
 // });
 
 
-export const updateData = (url) => ({
+export const updateData = url => ({
     type: UPDATE_DATA,
     payload: (async () => {
         const response = await fetch(url);
         const json = await response.json();
-        // const FormatedData = json.rows.map(item => formatItem(json.columns, item) )
         return {data: json.rows, columns: json.columns}
     })
 });

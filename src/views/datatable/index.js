@@ -31,7 +31,7 @@ const TableComponent = ({
     renderedColumns,
     ...other
 }) => {
-    console.log(other)
+
     const cols = renderedColumns.map(column => ({
         Header: column,
         accessor: column,

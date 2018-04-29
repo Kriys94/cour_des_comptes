@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Accordion, Form, Menu, Sidebar, Checkbox } from 'semantic-ui-react'
+import { Accordion, Menu, Sidebar, Checkbox } from 'semantic-ui-react'
 import { connect } from "react-redux"
 import { addPivot, removePivot, addRenderColumns, removeRenderColumns } from './../../redux/actions/data'
 
@@ -102,6 +102,18 @@ class AccordionExampleMenu extends Component {
             <Menu.Item>
                 <Accordion.Title
                     active
+                    content='Variables visibles'
+                    index={1}
+                    onClick={this.handleClick}
+                />
+                <Accordion.Content
+                    active
+                    content={ColumnViewComponent(columns, renderedColumns, addRenderColumns, removeRenderColumns)}
+                />
+            </Menu.Item>
+            <Menu.Item>
+                <Accordion.Title
+                    active
                     content='Agréger par'
                     index={0}
                     onClick={this.handleClick}
@@ -110,19 +122,6 @@ class AccordionExampleMenu extends Component {
                     active
                     content={PivotComponent(columns, pivot, addPivot, removePivot)}
                 />
-            </Menu.Item>
-
-            <Menu.Item>
-            <Accordion.Title
-                active
-                content='Variables visibles'
-                index={1}
-                onClick={this.handleClick}
-            />
-            <Accordion.Content
-                active
-                content={ColumnViewComponent(columns, renderedColumns, addRenderColumns, removeRenderColumns)}
-            />
             </Menu.Item>
         </Accordion>
       </Sidebar>
