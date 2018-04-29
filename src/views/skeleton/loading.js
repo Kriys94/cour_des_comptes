@@ -6,15 +6,25 @@ import { connect } from 'react-redux'
 import { serverApi } from './../../utilis/config'
 
 const Loading = ({
-    path,
-    search,
+    location,
     updateData,
 }) => {
 
-    const id = path.split('/')[2];
-    // cde857960e8dc24c9cbcced673b496bb
-    console.log(id)
-    updateData(serverApi + '/' + id + search)
+    
+    const csv = location.search.split('?csv=')[1];
+    fetch(serverApi + '/apify?url=' + csv)
+    .then(response => response.json())
+    .then(json => {
+        if(json.ok) {
+            // const id = json.endpoint.split('/');
+            // console.log(id[id.length - 1])
+            updateData(json.endpoint + '?_shape=objects')
+        } else {
+            Error()
+        }
+    })
+    .catch(error => console.error(error))
+    // const id = location.pathname.split('/')[2];
 
     return (
         <div style={{ display: 'flex', flex: 1, alignItems: 'center', height: '100vh', width: '100vw'}}>
@@ -35,8 +45,7 @@ const Loading = ({
 };
 
 export const mapStateToProps = state => ({
-    path: state.router.location.pathname,
-    search: state.router.location.search,
+    location: state.router.location,
 });
 
 const mapDispatchToProps = {

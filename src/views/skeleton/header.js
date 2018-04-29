@@ -16,22 +16,22 @@ const Header = ({ path, history, toggleSlider }) => {
         <Segment inverted style={{borderRadius: 0, margin: 0}}>
             <Menu inverted pointing secondary>
                 <Menu.Item
-                    active={path === '/data/' + id}
-                    onClick={() => history.push('/data/' + id)}
+                    active={path === '/data'}
+                    onClick={() => history.push('/data')}
                 >
                     <Icon name='database' />
                     Données
                 </Menu.Item>
                 <Menu.Item
-                    active={path === '/graphs/' + id}
-                    onClick={() => history.push('/graphs/' + id)}
+                    active={path === '/graphs'}
+                    onClick={() => history.push('/graphs')}
                 >
                     <Icon name='pie chart' />
                     Graphiques
                 </Menu.Item>
                 <Menu.Item
                     active={path === '/map/' +  id}
-                    onClick={() => history.push('/map/' + id)}
+                    onClick={() => history.push('/map')}
                 >
                     <Icon name='map' />
                     Cartographie

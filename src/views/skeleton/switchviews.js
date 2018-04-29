@@ -3,6 +3,9 @@ import { Route, Switch } from 'react-router-dom'
 import DataTable from './../datatable'
 import Graphs from './../graphs'
 import Maps from './../maps'
+import { Redirect } from "react-router";
+
+const Default = () => <Redirect to={'/data'} />
 
 const SwitchViews = () => (
     <div
@@ -14,20 +17,23 @@ const SwitchViews = () => (
         <Route
             exact
             strict
-            path={'/data/:id'}
+            path={'/data'}
             component={DataTable}
         />
         <Route
             exact
             strict
-            path={'/graphs/:id'}
+            path={'/graphs'}
             component={Graphs}
         />
         <Route
             exact
             strict
-            path={'/map/:id'}
+            path={'/map'}
             component={Maps}
+        />
+        <Route
+            component={Default}
         />
     </Switch>
     </div>
