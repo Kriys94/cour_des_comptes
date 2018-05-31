@@ -4,8 +4,15 @@ import DataTable from './../datatable'
 import Graphs from './../graphs'
 import Maps from './../maps'
 import { Redirect } from "react-router";
+import { connect } from 'react-redux'
 
-const Default = () => <Redirect to={'/data'} />
+export const mapStateToProps = state => ({
+    location: state.router.location,
+});
+
+const Default = ({location}) => <Redirect to={'/data' + location.search} />
+
+const ConnectedDefault = connect(mapStateToProps)(Default);
 
 const SwitchViews = () => (
     <div
@@ -33,7 +40,7 @@ const SwitchViews = () => (
             component={Maps}
         />
         <Route
-            component={Default}
+            component={ConnectedDefault}
         />
     </Switch>
     </div>

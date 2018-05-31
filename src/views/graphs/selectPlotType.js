@@ -10,8 +10,8 @@ const SelectPlotType = ({
   selectPlotType,
 }) => {
     const plotTypes = ['scatter', 'bar'];
-    const listPlotTypes = plotTypes.map((col) =>
-      <option value={col}>
+    const listPlotTypes = plotTypes.map((col, index) =>
+      <option key={index} value={col}>
         {col}
       </option>
     );

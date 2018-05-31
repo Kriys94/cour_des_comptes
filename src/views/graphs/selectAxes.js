@@ -12,13 +12,13 @@ const SelectAxes = ({
   addXAxis,
   addYAxis
 }) => {
-  const listItemsX = columns.map((col) =>
-    <option value={col}>
+  const listItemsX = columns.map((col, index) =>
+    <option key={index} value={col}>
       {col}
     </option>
   );
-  const listItemsY = columns.map((col) =>
-    <option value={col}>
+  const listItemsY = columns.map((col, index) =>
+    <option key={index} value={col}>
       {col}
     </option>
   );
