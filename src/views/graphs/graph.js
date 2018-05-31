@@ -5,7 +5,9 @@ import {
   VictoryScatter,
   VictoryBar,
   VictoryChart,
-  VictoryZoomContainer } from 'victory';
+  VictoryZoomContainer,
+  VictoryTooltip,
+} from 'victory';
 
 const Graph = ({
   data,
@@ -29,6 +31,8 @@ const Graph = ({
               data={data}
               x={graph.xAxis}
               y={graph.yAxis}
+              labels={(d) => d.y}
+              labelComponent={<VictoryTooltip/>}
             />
           </VictoryChart>
         )
@@ -41,6 +45,8 @@ const Graph = ({
               data={data}
               x={graph.xAxis}
               y={graph.yAxis}
+              labels={(d) => d.y}
+              labelComponent={<VictoryTooltip/>}
             />
           </VictoryChart>
         )
