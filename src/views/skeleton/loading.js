@@ -10,7 +10,7 @@ const Loading = ({
     updateData,
 }) => {
 
-    
+
     const csv = location.search.split('?csv=')[1];
     fetch(serverApi + '/apify?url=' + csv)
     .then(response => response.json())
