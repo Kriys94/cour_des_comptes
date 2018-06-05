@@ -27,7 +27,7 @@ const Header = ({ path, history, toggleSlider }) => {
                     onClick={() => history.push('/graphs')}
                 >
                     <Icon name='pie chart' />
-                    Graphiques
+                    Graphique
                 </Menu.Item>
                 <DataHeader />
             </Menu>
