@@ -13,6 +13,7 @@ const Graph = ({
   data,
   graph,
 }) => {
+  console.log('asdf', data);
     if (graph.xAxis === undefined || graph.yAxis === undefined) {
       return (
         <div>

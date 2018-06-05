@@ -5,7 +5,7 @@ const tiles = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
 const mapCenter = [47.08, 2.39];
 const zoomLevel = 6;
 const stamenTonerAttr = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-
+console.log(mapCenter);
 
 // function addDataToMap(data, mymap) {
 //     var geoJson = L.geoJson(data, {

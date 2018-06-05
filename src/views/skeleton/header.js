@@ -29,13 +29,6 @@ const Header = ({ path, history, toggleSlider }) => {
                     <Icon name='pie chart' />
                     Graphiques
                 </Menu.Item>
-                <Menu.Item
-                    active={path === '/map/' +  id}
-                    onClick={() => history.push('/map')}
-                >
-                    <Icon name='map' />
-                    Cartographie
-                </Menu.Item>
                 <DataHeader />
             </Menu>
         </Segment>
